@@ -1,0 +1,30 @@
+<a href="/items/create" class="a_partial"
+  >+ Add new item</a
+>
+<hr class="hr" />
+<% items.forEach((item) => { %>
+<a href="<%= item.url %>" class="a2_partial">
+  <div class="div_partial">
+    <div class="div2_partial">
+      <img
+        src="/images/<%= item.filename || 'placeholder-image.jpeg' %>"
+        alt="<%= (typeof item.filename !== 'undefined') ? item.name : 'No image available' %>"
+        class="img_partial"
+      />
+      <div>
+        <p><%= item.name %></p>
+        <p><%= item.category.name + ' - ' + item.brand.name %></p>
+        <p class="p_partial">$<%= item.price %></p>
+      </div>
+    </div>
+    <div>
+      <p
+        class="p2_partial"
+      >
+        <%= item.stock %>
+      </p>
+    </div>
+  </div>
+</a>
+<hr class="hr" />
+<% }) %>

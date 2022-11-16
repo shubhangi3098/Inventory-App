@@ -1,0 +1,14 @@
+<% layout('layout') -%>
+<section class="section_cat_list">
+  <h2 class="h2_cat_list"><%= title %></h2>
+  <a href="/category/create" class="a_cat_list"
+    >+ Add new category</a
+  >
+  <hr class="hr" />
+  <% categories.forEach((category) => { %>
+  <div class="div_cat_list">
+    <a href="<%= category.url %>"><%= category.name %></a>
+  </div>
+  <hr class="hr" />
+  <% }) %>
+</section>

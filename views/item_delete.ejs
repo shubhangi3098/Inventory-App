@@ -1,0 +1,57 @@
+<% layout('layout') -%>
+<section class="section_item_dlt">
+  <p class="p_item_dlt">Are you sure want to delete this item?</p>
+  <div
+    class="div_item_dlt"
+  >
+    <div class="div2_item_dlt">
+      <img
+        src="/images/<%= item.filename || 'placeholder-image.jpeg' %>"
+        alt="<%= (typeof item.filename !== 'undefined') ? item.name : 'No image available' %>"
+        class="img_item_dlt"
+      />
+      <div>
+        <p><%= item.name %></p>
+        <p><%= item.category.name + ' - ' + item.brand.name %></p>
+        <p class="p2_item_dlt">$<%= item.price %></p>
+      </div>
+    </div>
+    <div>
+      <p
+        class="p3_item_dlt"
+      >
+        <%= item.stock %>
+      </p>
+    </div>
+  </div>
+  <p>
+    Enter the name of the item in the input field to confirm this action.
+    <b><%= item.name %></b>
+  </p>
+  <form method="POST">
+    <input
+      type="text"
+      name="name"
+      required
+      class="form_item_dlt"
+    />
+
+    <% if (typeof error !== 'undefined') { %>
+    <small class="sml_item_dlt"><%= error %></small>
+    <% } %>
+
+    <div class="div3_item_dlt">
+      <a
+        href="/items"
+        class="a_item_dlt"
+        >Cancel</a
+      >
+      <button
+        type="submit"
+        class="btn_item_dlt"
+      >
+        Done
+      </button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,33 @@
+<details class="detail_partial">
+    <summary
+      class="summary_partial"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="svg_partial"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+        />
+      </svg>
+    </summary>
+  
+    <ul
+      class="ul_partial"
+      style="right: 40px; width: max-content"
+    >
+      <li class="li_partial">
+        <a href="<%= editLink %>"><%= 'Edit ' + title %></a>
+      </li>
+      <% if(items.length == 0) { %>
+      <li>
+        <a href="<%= delLink %>"><%= 'Delete ' + title %></a>
+      </li>
+      <% } %>
+    </ul>
+  </details>
+  

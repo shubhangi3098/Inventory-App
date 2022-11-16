@@ -1,0 +1,117 @@
+<% layout('layout') -%>
+<section class="flex justify-center items-center flex-col mt-8 max-w-3xl w-full">
+  <h2 class="text-center text-xl text-blue-500"><%= title %></h2>
+  <% if (typeof errors !== 'undefined') { %>
+  <ul>
+    <% for (const err of errors) { %>
+    <li><%= err.msg %></li>
+    <% } %>
+  </ul>
+  <% } %>
+  <form
+    class="form_item"
+    method="POST"
+    action=""
+    enctype="multipart/form-data"
+  >
+    <label for="name" class="label_item">Name</label>
+    <input
+      class="input_item"
+      type="text"
+      required
+      id="name"
+      value="<%= typeof item === 'undefined' ? '' : item.name %>"
+      name="name"
+    /><br><br>
+    <label for="description" class="label_item">Description</label>
+    <input
+      type="text" 
+      name="description" 
+      id="description" 
+      class="txtarea_item"
+    ><%= typeof item === 'undefined' ? '' : item.description %><br><br>
+
+    <label for="avatar" class="label_item">Image</label>
+    <input type="file" name="avatar" id="avatar" /><br><br>
+
+    <label for="category" class="label_item">Category</label>
+    <select
+      name="category"
+      id="category"
+      class="select_item"
+    >
+      <% for (const category of categories) { %>
+        <% if(typeof item !== 'undefined') { %>
+          <option
+            value="<%= category.id %>"
+            <%= category._id.toString() === item.category._id.toString() ? 'selected' : '' %>
+          >
+            <%= category.name %>
+          </option>
+        <% } else { %>
+          <option
+            value="<%= category.id %>"
+          >
+            <%= category.name %>
+          </option>
+        <% } %>
+      <% } %>
+    </select><br><br>
+    <label for="brand" class="label_item">Brand</label>
+    <select
+      id="brand"
+      name="brand"
+      class="select_item"
+    >
+      <% for (const brand of brands) { %>
+        <% if(typeof item !== 'undefined') { %>
+          <option
+            value="<%= brand.id %>"
+            <%= brand._id.toString() === item.brand._id.toString() ? 'selected' : '' %>
+          >
+            <%= brand.name %>
+          </option>
+        <% } else { %>
+          <<option value="<%= brand.id %>"><%= brand.name %></option>
+        <% } %>
+      <% } %>
+    </select><br><br>
+    <label for="price" class="label_item">Price ($)</label>
+    <input
+      id="price"
+      name="price"
+      type="number"
+      min="0"
+      value="<%= typeof item === 'undefined' ? '0' : item.price %>"
+      required
+      max="1000000"
+      class="input_item"
+    /><br><br>
+    <label for="stock" class="label_item"
+      >Stock</label
+    >
+    <input
+      id="stock"
+      name="stock"
+      type="number"
+      min="0"
+      max="100000"
+      required
+      value="<%= typeof item === 'undefined' ? '0' : item.stock %>"
+      class="input_item"
+    /><br><br>
+    <div class="div_item">
+      <button
+        type="submit"
+        name="submit"
+        class="btn-item"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+
+  <% if(title === 'Edit Form') { %>
+    <a href="<%= item.url + '/delete' %>" class="a_item">Delete Item</a>
+  <% } %>
+</section>

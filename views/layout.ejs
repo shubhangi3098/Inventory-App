@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Inventory app</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body class="body">
+    <div class="div_layout">
+      <h1 id="main-title" class="h1_layout">Inventory Application</h1>
+      <details class="detail_layout">
+        <summary class="cursor-pointer">
+          <p class="menu">&#8801;</p>
+        </summary>
+        <nav
+          class="navigation"
+          style="right: 20px"
+        >
+          <li class="li_layout"><a href="/items">All Items</a></li>
+          <li class="li_layout">
+            <a href="/categories">Categories</a>
+          </li>
+          <li class="li_layout"><a href="/brands">Brands</a></li>
+        </nav>
+      </details>
+    </div>
+    <main class="main_layout"><%- body -%></main>
+  </body>
+</html>

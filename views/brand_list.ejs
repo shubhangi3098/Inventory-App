@@ -1,0 +1,12 @@
+<% layout('layout') -%>
+<section class="section_brnd_list">
+  <h2 class="h2_brnd_list"><%= title %></h2>
+  <a href="brands/create" class="a_brnd_list"
+    >+ Add new brand</a
+  >
+  <hr class="hr" />
+  <% brands.forEach((brand) => { %>
+  <a href="<%= brand.url %>" class="a2_brnd_list"><%= brand.name %></a>
+  <hr class="hr" />
+  <% }) %>
+</section>

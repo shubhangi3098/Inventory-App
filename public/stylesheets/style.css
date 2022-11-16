@@ -1,0 +1,59 @@
+*
+{
+  margin: 0%;
+  padding: 0%;
+}
+.a2-partial
+{
+  width:70%;
+  margin-left:10%;
+
+}
+.h1_layout
+{
+  text-align: center;
+}
+.cursor-pointer
+{
+  margin-left: 84%;
+  margin-top: 0%;
+  font-size: 25px;
+}
+.menu
+{
+  margin-left: -8%;
+  margin-top: -14%;
+  font-size: 33px;
+}
+.navigation
+{
+  margin-left:84%;
+  margin-top:0%;
+}
+.li_layout
+{
+  font-size: 18px;
+}
+.li_layout>a
+{
+  text-decoration: none;
+  color: black;
+}
+.h2_index
+{
+  margin-left: 0%;
+  margin-top: 0%;
+}
+.a_brnd_list, .a2_brnd_list, .a_cat_list, .div_cat_list>a, .a_partial, p
+{
+  text-decoration:none;
+  color: black;
+}
+.hr
+{
+  width:100px;
+}
+.a2_brnd_list, .div_cat_list>a
+{
+  margin-left:30px;
+}

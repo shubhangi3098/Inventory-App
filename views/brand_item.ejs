@@ -1,0 +1,11 @@
+<% layout('./layout') -%>
+<section
+  class="section_brnd_item"
+>
+  <h2 class="h2_brnd_item">
+    <%= title %> <% if (typeof brand !== 'undefined') { %> <%-
+    partial('partials/edit_delete_svg', {editLink: brand.url + '/update',
+    delLink: brand.url + '/delete', title: 'Brand', items: items}) %> <% } %>
+  </h2>
+  <%- partial('partials/show_items', { items: items }) %>
+</section>

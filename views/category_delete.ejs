@@ -1,0 +1,37 @@
+<% layout('layout') -%>
+<section class="section_cat_dlt">
+  <p class="p_cat_dlt">Are you sure want to delete this category?</p>
+  <div class="div_cat_dlt">
+    <p><%= category.name %></p>
+  </div>
+  <p>
+    Enter the name of the category in the input field to confirm this action.
+    <b><%= category.name %></b>
+  </p>
+  <form method="POST">
+    <input
+      type="text"
+      name="name"
+      required
+      class="form_cat_dlt"
+    />
+
+    <% if (typeof error !== 'undefined') { %>
+    <small class="sml_cat_brnd"><%= error %></small>
+    <% } %>
+
+    <div class="div2_cat_dlt">
+      <a
+        href="/categories"
+        class="a_cat_dlt"
+        >Cancel</a
+      >
+      <button
+        type="submit"
+        class="btn_cat_dlt"
+      >
+        Done
+      </button>
+    </div>
+  </form>
+</section>

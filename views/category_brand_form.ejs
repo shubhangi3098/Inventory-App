@@ -1,0 +1,37 @@
+<% layout('layout') -%>
+<section
+  class="section_cat_brnd"
+>
+  <h2 class="h2_cat_brnd"><%= title %></h2>
+  <% if (typeof errors !== 'undefined') { %>
+  <ul>
+    <% for (const err of errors) { %>
+    <li><%= err.msg %></li>
+    <% } %>
+  </ul>
+  <% } %>
+  <form
+    class="form_cat_brnd"
+    method="POST"
+    action=""
+  >
+    <label for="name" class="label_cat_brnd">Name</label>
+    <input
+      class="input_cat_brnd"
+      type="text"
+      required
+      id="name"
+      value="<%= typeof arg === 'undefined' ? '' : arg.name %>"
+      name="name"
+    />
+    <div class="div_cat_brnd">
+      <button
+        type="submit"
+        name="submit"
+        class="btn_cat_brnd"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</section>

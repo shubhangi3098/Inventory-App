@@ -1,0 +1,24 @@
+<% layout('layout') -%>
+<div
+  class="div_show"
+>
+  <img
+    src="/images/<%= item.filename || 'placeholder-image.jpeg' %>"
+    alt="<%= (typeof item.filename !== 'undefined') ? item.name : 'No image available' %>"
+    class="img_show"
+  />
+  <div class="div2_show">
+    <div class="div3_show">
+      <p class="p_show"><%= item.name %></p>
+      <a
+        href="<%= item.url + '/update' %>"
+        class="a_show"
+        >Edit</a
+      >
+    </div>
+    <p class="p2_show"><%= item.brand.name %></p>
+    <p class="p2_show"><%= item.description %></p>
+    <p class="p2_show">Price: $<%= item.price %></p>
+    <p class="p2_show">Stock: <%= item.stock %></p>
+  </div>
+</div>
